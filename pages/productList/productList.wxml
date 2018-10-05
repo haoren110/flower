@@ -1,0 +1,78 @@
+
+ <view class="foot">
+    <!-- <view class="foot-item collect">
+<image class='image1' src='../../images/fabu-bg.png'></image>
+<text class='text1'> 收藏</text>
+</view> -->
+<view class="foot-item {{currentTab==''?'active':''}}"  bindtap='tab' data-current="">
+    <!-- <image src='../../images/icon_19.png' data-current="0"></image> -->
+      <text class="color" data-current="">全部</text>
+    </view>
+    <view class="foot-item  {{currentTab=='UN_PAY'?'active':''}}" bindtap='tab' data-current="UN_PAY">
+    <image src="{{currentTab=='UN_PAY'?'../../images/icon_16.png':'../../images/icon_22.png'}}" data-current="UN_PAY"></image>
+      <text class="color" data-current="UN_PAY">待付款</text>
+    </view>
+    <view class="foot-item {{currentTab=='WAIT_DELIVER'?'active':''}}"  bindtap='tab' data-current="WAIT_DELIVER">
+    <image src="{{currentTab=='WAIT_DELIVER'?'../../images/icon_17.png':'../../images/icon_23.png'}}" data-current="WAIT_DELIVER"></image>
+      <text class="color" data-current="WAIT_DELIVER">待发货</text>
+    </view>
+    <view class="foot-item {{currentTab=='END_SERVE'?'active':''}}"  bindtap='tab' data-current="END_SERVE">
+    <image src="{{currentTab=='END_SERVE'?'../../images/icon_18.png':'../../images/icon_24.png'}}" data-current="END_SERVE"></image>
+      <text class="color" data-current="END_SERVE">已收货</text>
+    </view>
+    
+  </view>
+  <view class='list' wx:if='{{orderList.length!=0}}'>
+ <block wx:for="{{orderList}}" wx:for-item="item" >
+   <navigator url='/pages/orderDetail/orderDetail?ordersId={{item.orders.id}}&orderStatus={{item.orders.orderStatus}}'  open-type='redirect'> 
+    <view class='order-item'>
+      <view class='order-item-number'>
+        <text>订单编号：{{item.orders.orderNumber}}</text>
+        <text class='order-type' wx:if="{{item.orders.orderStatus=='UN_PAY'}}" style='color:#F36066'>待付款</text>
+        <text class='order-type' wx:if="{{item.orders.orderStatus=='WAIT_DELIVER'}}" style='color:#7D9D5D'>待发货</text>
+        <text class='order-type' wx:if="{{item.orders.orderStatus=='REVOKE'}}" style='color:#7D9D5D'>已取消</text>
+        <text class='order-type' wx:if="{{item.orders.orderStatus=='WAIT_RECEIPT'}}" style='color:#7D9D5D'>待收货</text>
+        <text class='order-type' wx:if="{{item.orders.orderStatus=='END_SERVE'}}" style='color:#7D9D5D'>已收货</text>
+      </view>
+       <block wx:for='{{item.ordersProductList}}' wx:for-item="itemPro">
+       <view class="oreder-particulars">
+          <view class="oreder-particulars-img">
+            <image src="{{img}}{{itemPro.mainImg}}"></image>
+          </view>
+          <view class="oreder-particulars-title">
+            <view class="oreder-particulars-name">{{itemPro.productName}}</view> 
+            <label class="oreder-particulars-name1">卡片留言：{{item.orders.message}}</label>
+               <view style='margin-top:44px; float:right; margin-right:8px;'>×{{itemPro.num}}</view>
+            <view style='margin-top:44px;'>￥{{itemPro.unitPrice}}</view>
+          </view>
+      </view>
+      </block>
+      <view class='order-button' wx:if="{{item.orders.orderStatus == 'UN_PAY'}}">
+        <text style="float:left; font-size:12px;margin:13px 10px 0 14px;" >总金额：￥{{item.orders.moneyPayOrders}}</text>
+        <text class='order-button-type' catchtap='gotopay' data-index="{{item.orders.id}}">去支付</text>
+        <text class='order-button-type' catchtap='cancelOrder' data-index="{{item.orders.id}}">取消订单</text>
+      </view> 
+      <view class='order-button' wx:if="{{item.orders.orderStatus != 'UN_PAY'}}">
+        <text style="float:left; font-size:12px;margin:13px 10px 0 14px;">总金额：￥{{item.orders.moneyPayOrders}}</text>
+        <!-- <text class='order-button-type' >{{item.orders.orderStatusStr}}</text>  -->
+      </view>  
+    </view>
+     </navigator> 
+ </block>
+  </view>
+  <view class='list' wx:if='{{orderList.length==0}}'>
+  <!--   没有数据时的显示图片-->
+    <view class='image2'>
+      <image class='image1' src='../../images/empty.png'></image>
+      <view>
+        <text class='jixu' bindtap='gotobuy'>去购物</text>
+        <!-- <text class='jixu1' bindtap='gotoorder'>查看订单</text> -->
+      </view>
+    </view>
+  </view>
+  <!-- <view  bindtap="addMore" style='font-size:12px; text-align: center;width:95%;line-height:25px; height:25px;padding:4px;'  wx:if="{{orderList.length}}">点击加载更多</view> -->
+
+ 
+
+
+ 

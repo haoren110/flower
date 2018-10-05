@@ -1,0 +1,7 @@
+<view class='image2'>
+<image class='image1' src='../../images/success.png' ></image>
+<view>
+<text class='jixu' bindtap='gotobuy'>继续购物</text>
+<text class='jixu1' bindtap='gotoorder'>查看订单</text>
+</view>
+</view>

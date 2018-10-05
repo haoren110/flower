@@ -1,0 +1,79 @@
+<!--logs.wxml-->
+<!-- header-->
+<view class='meHeader'>
+  <image src='../../images/icon_15.png' class='backImg'></image>
+  <view class='userInfo'>
+    <image background-size="cover" class='userInfo-avatar' src='{{userInfo.avatarUrl}}' style='width:160rpx;height:160rpx'></image>
+  </view>
+  <view class='userInfoName'> <text >{{userInfo.nickName}}</text></view>
+  
+</view>
+<view class='order'>
+  <view class='choose' bindtap='seeOrder'>
+    <text>我的订单</text>
+    <image src='../../images/icon-right.png' class='chooseImg'></image>
+    <text class='chooseText'>查看所有已购订单</text>
+  </view>
+  <!-- <navigator url=''> 
+  <image  class='orderDatel1' src='../../images/icon_17.png' bindtap='gotoOrderList1'></image>
+  <image  class='orderDatel' src='../../images/icon_16.png' bindtap='gotoOrderList1'></image>
+   </navigator> 
+   <navigator url=''> 
+  <image class='orderDatel1' src='../../images/icon_18.png' bindtap='gotoOrderList'></image>
+  </navigator> 
+<view class='orderDatelText' >
+ <text class='orderDatelText1'>待发货</text>
+  <text class='orderDatelText2'>已收货</text> -->
+  <view class='box'>
+  <view class="column">
+
+    <view class="item">
+      <navigator url='../productList/productList?currentTab=0'>
+        <view class="itemImg">
+          <image  src='../../images/icon_16.png' ></image>
+        </view>
+      </navigator>
+      <view class="itemName">待付款</view>
+    </view>
+    <view class="item">
+      <navigator url='../productList/productList?currentTab=1'>
+        <view class="itemImg">
+          <image  src='../../images/icon_17.png' ></image>
+        </view>
+      </navigator>
+      <view class="itemName">待发货</view>
+    </view>
+
+    <view class="item">
+      <navigator url='../productList/productList?currentTab=2'>
+        <view class="itemImg">
+          <image src='../../images/icon_18.png' />
+        </view>
+      </navigator>
+      <view class="itemName">已收货</view>
+    </view>
+  </view>
+</view>
+</view>
+
+<view class='choose' bindtap='address'>
+  <text class='addressText'>我的收货地址</text>
+  <image src='../../images/icon-right.png' class='chooseImg'></image>
+  <image src='../../images/icon_19.png' class='addressImg'></image>
+</view>
+<view class='choose' bindtap='introduction'>
+  <text class='addressText'>关于相逢</text>
+  <image src='../../images/icon-right.png' class='chooseImg'></image>
+  <image src='../../images/icon_20.png' class='addressImg'></image>
+</view>
+<view class='choose' bindtap='score'>
+  <text class='addressText'>我的积分</text>
+  <image src='../../images/icon-right.png' class='chooseImg'></image>
+  <image src='../../images/icon_21.png' class='addressImg'></image>
+</view>
+
+<!-- <view class="container log-list">
+  <block wx:for="{{logs}}" wx:for-item="log">
+    <text class="log-item">{{index + 1}}. {{log}}</text>
+  </block>
+</view> -->

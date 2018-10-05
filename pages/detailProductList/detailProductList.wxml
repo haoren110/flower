@@ -1,0 +1,115 @@
+<view>
+  <view class='menuImage' bindtap='menu'>
+    <image src='../../images/icon_01.png'></image>
+  </view>
+
+  <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
+  <block wx:for='{{categoryList}}'>
+    <view class="tab-item {{currentTab==index?'active':''}}" data-current="{{index}}" bindtap="swichNav">{{item.name}}</view>
+    </block>
+    <!-- <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">百合</view>
+    <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="swichNav">郁金香</view>
+    <view class="tab-item {{currentTab==3?'active':''}}" data-current="3" bindtap="swichNav">康乃馨</view>
+    <view class="tab-item {{currentTab==4?'active':''}}" data-current="4" bindtap="swichNav">向日葵</view>
+    <view class="tab-item {{currentTab==5?'active':''}}" data-current="5" bindtap="swichNav">薰衣草</view>
+    <view class="tab-item {{currentTab==6?'active':''}}" data-current="6" bindtap="swichNav">菊花</view>
+    <view class="tab-item {{currentTab==7?'active':''}}" data-current="7" bindtap="swichNav">其他</view> -->
+  </scroll-view>
+  <view class='simpleShopCar' bindtap='menuHidden' hidden='{{menuHidden}}'>
+
+    <view class='menu'>
+      <view class="item" data-index='0' catchtap='choosefenlei'>
+        <view class="itemImg">
+          <image src='../../images/icon_09.png' />
+        </view>
+        <view class="itemName" style='color:{{currentClassification==0?"#f36066":""}}'>鲜花礼盒</view>
+      </view>
+      <view class="item" data-index='1' catchtap='choosefenlei'>
+        <view class="itemImg">
+          <image src='../../images/icon_10.png' />
+        </view>
+        <view class="itemName" style='color:{{currentClassification==1?"#f36066":""}}'>生日花束</view>
+      </view>
+      <view class="item" data-index='2' catchtap='choosefenlei'>
+        <view class="itemImg">
+          <image src='../../images/icon_11.png' />
+        </view>
+        <view class="itemName" style='color:{{currentClassification==2?"#f36066":""}}'>开业花篮</view>
+      </view>
+      <view class="item" data-index='3' catchtap='choosefenlei'>
+        <view class="itemImg">
+          <image src='../../images/icon_12.png' />
+        </view>
+        <view class="itemName" style='color:{{currentClassification==3?"#f36066":""}}'>会议桌花</view>
+      </view>
+      <view class="item" data-index='4' catchtap='choosefenlei'>
+        <view class="itemImg">
+          <image src='../../images/icon_13.png' />
+        </view>
+        <view class="itemName" style='color:{{currentClassification==4?"#f36066":""}}'>婚礼用花</view>
+      </view>
+      <view class="item" data-index='5' catchtap='choosefenlei'>
+        <view class="itemImg">
+          <image src='../../images/icon_14.png' />
+        </view>
+        <view class="itemName" style='color:{{currentClassification==5?"#f36066":""}}'>祭奠用花</view>
+      </view>
+    </view>
+  </view>
+
+
+
+  <!-- <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab"
+     style="height:{{winHeight}}rpx">
+        <swiper-item wx:for="{{[0,1,2,3,4,5,6,7]}}">
+            <scroll-view scroll-y="true" class="scoll-h" >
+                <block wx:for="{{[1,2,3,4,5,6,7,8]}}" wx:key="*this">
+                    <view class="item-ans">
+                        <view class="avatar">
+                            <image class="img" src="http://ookzqad11.bkt.clouddn.com/avatar.png"></image>
+                        </view>
+                        <view class="expertInfo">
+                            <view class="name">欢颜</view>
+                            <view class="tag">知名情感博主</view>
+                            <view class="answerHistory">134个回答，2234人听过 </view>
+                        </view>
+                        <navigator url="/pages/askExpert/expertDetail" class="askBtn">问TA</navigator> 
+                    </view>
+                </block>
+            </scroll-view>
+        </swiper-item>
+    </swiper> -->
+  <view class='tab-content' wx:if='{{list.length!=0}}'>
+    <block wx:for="{{list}}">
+      <view class='product_list_item' style='width:{{WIDTH*0.44}}px;'>
+        <navigator url='../action/action?productId={{item.product.id}}'>
+          <view class='prouduct_list_img' style='height:{{WIDTH*0.44}}px;'>
+            <image src='{{imageURL}}{{item.product.images}}'></image>
+          </view>
+        </navigator>
+        <text class='prouduct_list_name'>{{item.product.productName}}</text>
+        <view class='item_price'>
+          <text class='prouduct_list_price'>￥{{item.product.price}}</text>
+          <view class='shopCar'>
+
+            <image class='shopCarImage' src="../../images/icon_05.png"></image>
+            <text class='shopCarText' catchtap='addToCar' data-productId='{{item.product.id}}'>加入购物车</text>
+          </view>
+
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class='tab-content' wx:if='{{list.length==0}}'>
+  <view class='image2'>
+<image class='image1' src='../../images/no_data.png' ></image>
+ <view style='font-size:14px;color:#919191; text-align: center;'>没有数据了。。。</view> 
+<view>
+
+</view>
+</view>
+  </view>
+</view>
+<!-- <view style='font-size:12px; text-align: center;width:95%;line-height:25px; height:25px;padding:4px;' bindtap='loadMore' hidden='{{hidden}}'>
+    <text >点击加载更多</text>
+</view> -->

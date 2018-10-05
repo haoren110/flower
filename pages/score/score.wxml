@@ -1,0 +1,31 @@
+<!-- <image src='../../imagesd/icon_25.png'></image> -->
+<view class='meHeader'>
+  <image src='../../images/icon_25.png' class='backImg' mode='widthFix'></image>
+  <view class='userInfo'>
+  <image background-size="cover" class='userInfo-avatar' src='../../images/icon_26.png' style='width:43px;height:50px'></image> 
+  </view>
+  <view class='available'>
+    <text class='userInfoName'>可用积分</text>
+    <text class='userInfoName1'>{{integral}}</text>
+  </view>
+</view>
+<view class='choose' style='height:30px;'>
+    <text>积分明细</text>
+    <!-- <image src='../../images/icon-right.png' class='chooseImg'></image> -->
+    <!-- <text class='addressText'>查看全部</text> -->
+  </view>
+  <view class='prompt'> <text class='promptext'>温馨提示：用户消费1元可积1分，积分商品请在线下门店兑换</text></view>
+  <block wx:for="{{detailsList}}" wx:for-item="item" >
+  <view class='choose' wx:if="{{item.mode == 'OUT'}}">
+    <view><text style='color:'>-{{item.integral}}</text> <text class='chooseText'>{{item.createTime_str}}</text></view>
+    <text class='scoreType'>{{item.type_text}}</text>
+    <!-- <image src='../../images/icon-right.png' class='chooseImg'></image> -->
+  </view>
+  <view class='choose' wx:if="{{item.mode == 'IN'}}">
+  <view>
+    <text>+{{item.integral}}</text>  <text class='chooseText'>{{item.createTime_str}}</text></view>
+    <text class='scoreType1'>{{item.type_text}}</text>
+    <!-- <image src='../../images/icon-right.png' class='chooseImg'></image> -->  
+  </view>
+  </block>
+ 

@@ -1,0 +1,151 @@
+.meHeader{
+ 
+   width: 100%;
+    background-size: 100% 100%;
+    text-align: center;
+    position: relative;
+    height: 400rpx;
+}
+.userInfo{
+position: absolute;
+  top: 40rpx;
+  /* left: 40%; */
+    width: 100%;
+}
+.userInfoName{
+  text-align: center;
+  font-size: 28rpx;
+      color: #333;
+    /* line-height: 30px; */
+    position: absolute;
+    top: 260rpx;
+     width: 100%;
+}
+.userInfo-avatar{
+  
+    background-size: 100% 100%;
+    text-align: center;
+        border-radius: 50%;
+        margin-top: 40rpx;
+}
+.backImg{
+  width: 100%;height: 400rpx;
+
+}
+.choose{
+  font-size: 32rpx;
+  line-height: 80rpx;
+  margin: 20rpx auto;
+  /* margin-top: 0; */
+  background:#ffffff;
+padding-left:20rpx;
+box-shadow:rgba(0,0,0,0.1) 0 0 20rpx;
+
+  /* border-bottom: 1px solid #e7e7e7; */
+}
+.choose:first-child{
+  box-shadow: none;
+  margin-top: 0px;
+  border-bottom: 2rpx solid #e7e7e7; 
+}
+.chooseImg{
+  width: 40rpx;
+  height: 40rpx;
+  float: right;
+  margin-top: 20rpx;
+}
+.chooseText{
+  font-size: 24rpx;
+  color: #b1b1b1;
+  float: right;
+}
+.addressText{
+  margin-left: 30rpx;
+  font-size:28rpx;
+}
+.addressImg{
+   width: 40rpx;
+  height: 50rpx;
+  float: left;
+  margin-top: 16rpx;
+}
+
+.order{
+   /* border-bottom: 1px solid #e7e7e7; */
+   box-shadow: rgba(0, 0, 0, 0.1) 0 0 20rpx;
+   background:#ffffff;
+}
+.orderDatel{
+  width: 80rpx;
+  height: 80rpx;
+  margin-left: 40rpx;
+  margin-top: 16rpx;
+  margin-bottom: 16rpx;
+}
+.orderDatel>image{
+  width: 100%;
+  height: 100%;
+}
+.orderDatel1{
+  width: 80rpx;
+  height: 80rpx;
+  float: right;
+  margin: 40rpx 160rpx 16rpx  40rpx ;
+}
+.orderDatelText{
+  font-size: 24rpx;
+  margin-bottom: 20rpx;
+}
+.orderDatelText1 {
+  margin-left: 160rpx;
+  
+}
+.orderDatelText2 {
+  margin-right: 160rpx;
+  float: right;
+}
+/**************/
+.box {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  /* position: relative; */
+}
+.column {
+  flex-basis: 100%;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.item {
+  padding: 20rpx 20rpx 0 20rpx;
+ 
+  flex: 1;
+}
+
+.itemImg {
+  width: auto;
+  height: 88rpx;
+  overflow: hidden;
+  position: relative;
+}
+
+.itemImg>image {
+  width: 116rpx;
+  height: 88rpx;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.itemName {
+  font-size: 24rpx;
+  line-height: 24rpx;
+  color: #666;
+  padding: 20rpx 0rpx;
+  /* margin-top: 8px; */
+}
+
+    
+

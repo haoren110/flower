@@ -1,0 +1,95 @@
+<view class="mui-content" id="content">
+  <view class='list no' id='list' wx:if='{{carts.length!=0}}'>
+    <block wx:for="{{carts}}">
+      <view class="item">
+
+        <view class='list-item' bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" data-index="{{index}}" style="{{item.txtStyle}}">
+          <view class="mui-input-row mui-checkbox mui-left">
+            <image class='item-select' data-index="{{index}}" src="{{item.isSelect?'../../images/checkbox2.png':'../../images/chexbox1.png'}}" bindtap='switchSelect'></image>
+          </view>
+          <view class="image-box">
+            <!--{{carts[index].pic}} 暂时用一个图片  -->
+            <image class='image-box-img' src='{{imageURL}}{{item.images}}' mode="aspectFill"></image>
+          </view>
+
+          <view class="content-box">
+            <text class="content-box-title">{{item.productName}}</text>
+            <view class='content-box-menu'>
+              <text class="content-box-price">{{item.price}}</text>
+              <view class="mine-numBox">
+                <text class="mine-numBox-jia" bindtap="jia" data-index="{{index}}">+</text>
+                <text class="mine-numBox-input">{{item.num}}</text>
+                <text class="mine-numBox-jian" bindtap='jian' data-index="{{index}}">-</text>
+              </view>
+            </view>
+          </view>
+
+
+        </view>
+        <!-- <view data-index="{{index}}" bindtap = "collectionItem" class="inner del">移到收藏夹</view>  -->
+        <view data-index="{{index}}" bindtap="delItem" class="inner del1">删除</view>
+
+      </view>
+
+    </block>
+    <view class="bottom-menu">
+      <view class="mui-input-row mui-checkbox mui-left" id="allCheck">
+        <!-- <input name="checkbox" id="shopping_all" value="999" type="checkbox"> -->
+        <image class='item-select1' src="{{isAllSelect?'../../images/checkbox2.png':'../../images/chexbox1.png'}}" bindtap='allSelect' />
+        <text class="checkbox-text">全选</text>
+      </view>
+      <!-- <view id="edit_foot" style="display: none">
+      <view class="bottom-menu-item" style="float: right; background-color: #ef1c46;" id="btn_del">
+        删除
+      </view>
+      <view class="bottom-menu-item" style="float: right;background-color: #ff7f29;" id="btn_follow">
+        移到收藏夹
+      </view>
+    </view> -->
+      <view id="shopping_foot">
+        <view class="bottom-menu-item" style="float: right; background-color: #ff7f29;" id="btn_submit" bindtap='toBuy'>
+          结算
+        </view>
+        <view class="bottom-menu-priceBox">
+          <text>合计：<text class="total-price" id="total_money">{{totalPrice}}</text></text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+<view class='list no' id='list' wx:if='{{carts.length==0}}'>
+<!--   没有数据时的显示图片-->
+<view class='image2'>
+<image class='image1' src='../../images/empty.png' ></image>
+<view>
+<text class='jixu' bindtap='gotobuy'>去购物</text>
+<!-- <text class='jixu1' bindtap='gotoorder'>查看订单</text> -->
+</view>
+</view>
+</view>
+</view>
+<view class="bottom-menu">
+  <view class="mui-input-row mui-checkbox mui-left" id="allCheck">
+    <!-- <input name="checkbox" id="shopping_all" value="999" type="checkbox"> -->
+    <image class='item-select1' src="{{isAllSelect?'../../images/checkbox2.png':'../../images/chexbox1.png'}}" bindtap='allSelect' />
+    <text class="checkbox-text">全选</text>
+  </view>
+  <!-- <view id="edit_foot" style="display: none">
+      <view class="bottom-menu-item" style="float: right; background-color: #ef1c46;" id="btn_del">
+        删除
+      </view>
+      <view class="bottom-menu-item" style="float: right;background-color: #ff7f29;" id="btn_follow">
+        移到收藏夹
+      </view>
+    </view> -->
+  <view id="shopping_foot">
+
+    <view class="bottom-menu-item" style="float: right;background-color: {{totalPrice==0?'#d2d2d2':'#F36066'}};" id="btn_submit" bindtap='toBuy'>
+
+      结算
+    </view>
+    <view class="bottom-menu-priceBox">
+      <text>合计：<text class="total-price" id="total_money">{{totalPrice}}</text></text>
+    </view>
+  </view>
+</view>

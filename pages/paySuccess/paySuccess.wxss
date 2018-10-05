@@ -1,0 +1,37 @@
+.image1{
+  width: 560rpx;
+   height: 846rpx; 
+   margin-bottom:30rpx;
+}
+.image2{
+  width: 100%;
+  height: 100%;
+  /* padding: 10px; */
+  text-align: center;
+  margin:40rpx auto;
+}
+page{
+  width: 100%;
+  height: 100%;
+}
+.jixu{
+  width: 20%;
+  height: 80rpx;
+  border: 1px solid #F36066;
+  color: #F36066;
+  text-align: center;
+  font-size: 28rpx;
+  padding: 8rpx 32rpx;
+  border-radius: 8rpx;
+}
+.jixu1{
+  width: 20%;
+  height: 80rpx;
+  border: 1px solid #979797;
+  margin-left: 20rpx;
+   color: #979797;
+    text-align: center;
+    font-size: 28rpx;
+    padding: 8rpx 32rpx;
+     border-radius: 8rpx;
+}

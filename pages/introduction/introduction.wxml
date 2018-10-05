@@ -1,0 +1,57 @@
+<image src='../../images/about_us_01.png' class='header'></image>
+<view class='content'>
+  <image class='introduction1' src='../../images/about_us_02.png'></image>
+  <view class='introduction'>
+    <text>相逢花行始于2000年1月6日，本公司专注于批发各种国内外鲜切花及叶材。荷兰郁金香，厄瓜多尔满天星及玫瑰，南非珊瑚果，公主花，帝王花，澳大利亚腊梅，雪梅，北美冬青......进口鲜切花品种丰富 。</text>
+  </view>
+
+  <image src='../../images/about_us_03.png' class='introduction1'></image>
+  <view class='introduction'>
+    <text>福禄绣球基地西安唯一指定销售商，
+杭州万辉花卉有限公司西安唯一指定销售商，
+濮阳市国豫现代农业有限公司西安唯一指定销售商
+西月花卉切花西安优先合作伙伴
+......等优秀的基地供货商直接供货</text>
+  </view>
+
+  <image src='../../images/about_us_04.png' class='introduction1'></image>
+  <view class='introduction2'>
+    <view class='introduction2Text'>
+      <text>品质是公司发展的生命！服务是公司生命的延续！"
+         本公司致力打造"一站齐 "式购物方式！
+    我们坚持做更好的品质、更佳的产品和更优质的服务!</text>
+    </view>
+  </view>
+
+  <image src='../../images/about_us_05.png' class='introduction1'></image>
+  
+</view>
+<view class='message'>
+    <view>
+      <view class='contact_box1'>
+        <image src='../../images/about_us_06.png' class='introductionicon'></image>
+        <text>029-82069379</text>
+      </view>
+      <view class='contact_box'>
+        <image src='../../images/about_us_07.png' class='introductionicon'></image>
+        <text>13709217426</text>
+      </view>
+    </view>
+    <view>
+      <view class='contact_box1'>
+        <image src='../../images/about_us_08.png' class='introductionicon'></image>
+        <text>15339106192</text>
+      </view>
+      <view class='contact_box'>
+        <image src='../../images/about_us_09.png' class='introductionicon'></image>
+        <text>1020397248@qq.com</text>
+      </view>
+    </view>
+    <view style='text-align: center;'>
+      <view class='contact_box' style='width:92%;'>
+        <image src='../../images/about_us_10.png' class='introductionicon'></image>
+        <text>陕西省西安市碑林区光大路83号朱雀花卉市场</text>
+      </view>
+    </view>
+
+  </view>

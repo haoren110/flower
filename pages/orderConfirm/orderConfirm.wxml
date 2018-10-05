@@ -1,0 +1,186 @@
+<view class="swiper-tab">
+  <view class="swiper-tab-item {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">花店配送</view>
+  <view class="swiper-tab-item {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">到店自取</view>
+
+</view>
+
+<!-- <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight-38}}px" bindchange="bindChange">
+  <swiper-item> -->
+<form bindsubmit="formSubmit" bindreset="formReset" wx:if='{{currentTab==0}}'>
+  <view style='margin-bottom:47px;'>
+    <view class="confirm_address">
+      <view wx:if="{{cityName}}" bindtap='chooseAdress' style='height:120rpx'>
+        <image src='../../images/icon_27.png' class="confirm_address_img"></image>
+
+        <view class="confirm_address_information">
+          <view class="confirm_address_information1">
+            <text>收件人：{{userName}}    {{telNumber}}</text>
+          </view>
+          <view class="confirm_address_information2">
+            <text>收货地址：{{provinceName}}{{cityName}}{{countyName}}{{detailInfo}}</text>
+          </view>
+        </view>
+        <image src='../../images/icon-right.png' class='icon-right'></image>
+      </view>
+      <view bindtap='chooseAdress' wx:if="{{!cityName}}">
+        <text style='margin-left:32rpx;'>添加地址</text>
+        <image src='../../images/icon-right.png' class='chooseImg'></image>
+      </view>
+    </view>
+    <view style=' line-height:12px;background:#ffffff;box-shadow: rgba(0,0,0,0.1) 0 0 10px;'>
+      <image src='../../images/icon_28.png' class='line'></image>
+    </view>
+    <block wx:for='{{ordersProductList}}'>
+      <view class="oreder-particulars">
+        <!-- <navigator url="../action/action?shopid=1"> -->
+        <view class="oreder-particulars-img">
+          <image src="{{imageURL}}{{item.mainImg}}"></image>
+        </view>
+        <!-- </navigator> -->
+        <view class="oreder-particulars-title">
+          <view class="oreder-particulars-name">
+            {{item.productName}}
+          </view>
+          <view style='margin-top:50px; float:left; margin-left:12px'>￥{{item.unitPrice}}</view>
+          <view style='margin-top:50px; float:right; margin-right:12px;'>×{{item.num}}</view>
+        </view>
+        <!-- <view class="mine-numBox">
+              <text class="mine-numBox-jian" bindtap='jian'>-</text>
+              <text class="mine-numBox-input">{{item.num}}</text>
+              <text class="mine-numBox-jia" bindtap="jia">+</text>
+            </view> -->
+      </view>
+    </block>
+    <view class='request'>
+
+      <view class='requestItem'>
+        <text>订购人：</text>
+        <view class="section">
+          <input class="input" name="name" maxlength="10" placeholder="订购人姓名" />
+        </view>
+      </view>
+      <view class='requestItem'>
+        <!-- <label>订购人电话：</label> -->
+        <text>订购人电话：</text>
+        <view class="section">
+          <input class="input" maxlength="11" name="phoneNum" placeholder="订购人电话" />
+        </view>
+      </view>
+      <view class='requestItem'>
+        <text>送花时间：</text>
+        <view class="section">
+          <view class="section__title"></view>
+          <picker mode="date" value="{{date}}" start="{{currDate}}" end="2027-09-01" bindchange="bindDateChange">
+           <image src='../../images/icon-right.png' class='chooseImg'></image>
+            <view class="picker">
+               {{date}}
+            </view>
+           
+          </picker>
+        </view>
+      </view>
+      <view class='requestItem'>
+        <text>卡片留言：</text>
+        <view class="section">
+          <input class="input" maxlength="15" name="message" placeholder="填写你最没好的祝福" />
+        </view>
+      </view>
+      <view class='requestItem'>
+        <text>特殊要求：</text>
+        <view class="section">
+          <input class="input" maxlength="15" name="request" placeholder="填写您特殊要求" />
+        </view>
+      </view>
+    </view>
+
+  </view>
+  <view class='foot'>
+    <button form-type='submit' class='foot-item' style='background: #F36066;'>提交订单</button>
+    <view class="foot-item1" bindtap='addToShopCar'>
+      <text class="color2">合计：<text class='color3'>￥{{totalPrice}}</text></text>
+    </view>
+  </view>
+</form>
+<!-- </swiper-item> -->
+<!-- <swiper-item> -->
+<form bindsubmit="formSubmit1" bindreset="formReset1" wx:if='{{currentTab==1}}'>
+  <view style='margin-bottom:47px;'>
+    <block wx:for='{{ordersProductList}}'>
+      <view class="oreder-particulars">
+        <!-- <navigator url="../action/action?shopid=1"> -->
+        <view class="oreder-particulars-img">
+          <image src="{{imageURL}}{{item.mainImg}}"></image>
+        </view>
+        <!-- </navigator> -->
+
+        <view class="oreder-particulars-title">
+          <view class="oreder-particulars-name">
+            {{item.productName}}
+          </view>
+          <view style='margin-top:50px; float:left;margin-left:12px;'>￥{{item.unitPrice}}</view>
+          <view style='margin-top:50px; float:right; margin-right:12px;'>×{{item.num}}</view>
+        </view>
+        <!-- <view class="mine-numBox">
+            <text class="mine-numBox-jian" bindtap='jian'>-</text>
+            <text class="mine-numBox-input">{{item.num}}</text>
+            <text class="mine-numBox-jia" bindtap="jia">+</text>
+          </view> -->
+      </view>
+    </block>
+    <view class='request'>
+      <!-- <view class='requestItem'>
+          <text>购买数量</text>
+          
+        </view> -->
+      <view class='requestItem'>
+        <text>订购人：</text>
+        <view class="section">
+          <input class="input" name="name" maxlength="10" placeholder="订购人姓名" />
+        </view>
+      </view>
+      <view class='requestItem'>
+
+        <!-- <label>订购人电话：</label> -->
+        <text>订购人电话：</text>
+        <view class="section">
+          <input class="input" maxlength="11" name="phoneNum" placeholder="订购人电话" />
+        </view>
+      </view>
+      <view class='requestItem'>
+        <text>送花时间：</text>
+        <view class="section">
+          <view class="section__title"></view>
+          <picker mode="date" value="{{date}}" start="{{currDate}}" end="2027-09-01" bindchange="bindDateChange">
+          <image src='../../images/icon-right.png' class='chooseImg'></image>
+            <view class="picker">
+              当前选择: {{date}}
+            </view>
+           
+          </picker>
+        </view>
+      </view>
+      <view class='requestItem'>
+        <text>卡片留言：</text>
+        <view class="section">
+          <input class="input" maxlength="15" name="message" placeholder="填写你最没好的祝福" />
+        </view>
+      </view>
+      <view class='requestItem'>
+        <text>特殊要求：</text>
+        <view class="section">
+          <input class="input" maxlength="15" name="request" placeholder="填写您特殊要求" />
+        </view>
+      </view>
+    </view>
+
+  </view>
+  <view class='foot'>
+    <button form-type='submit' class='foot-item' style='background: #F36066;'>提交订单</button>
+    <view class="foot-item1" bindtap='addToShopCar'>
+      <text class="color2">合计：<text class='color3'>￥{{totalPrice}}</text></text>
+    </view>
+  </view>
+</form>
+<!-- </swiper-item>
+
+</swiper> -->

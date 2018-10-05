@@ -1,0 +1,242 @@
+.foot {
+    display: -webkit-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;   
+    height: 88rpx;
+    background-color: white;
+    z-index: 1001;
+    line-height: 88rpx;
+    box-shadow: rgba(0,0,0,0.1) 0 0 10px;
+    /* border-top: 1px solid #006634; */
+}
+.foot > .foot-item.collect {
+    width: 20%;
+    padding: 10rpx;
+}
+.foot > .foot-item {
+    -webkit-box-flex: 1;
+    /* width: 40%; */
+    padding: 0 20rpx;
+     text-align: center; 
+}
+.foot-item>image{
+  width: 74rpx;
+  height: 56rpx;
+  /* margin-right: 5px; */
+  margin-top: 16rpx;
+  display:block;
+  float:left;
+
+}
+.active{
+  border-bottom: 2rpx solid #F46F75;
+}
+ .color {
+    
+    /* display: block; */
+    font-size: 28rpx;
+    /* line-height: 44px; */
+    /* margin-top: 8px; */
+    /* text-align: center; */
+}
+/* .text1{
+  text-align: center;
+   font-size: 12px;
+    line-height: 16px;
+} */
+/*-----------------------*/
+.tab {
+    display: -webkit-box;
+    border-bottom: 2rpx solid #e7e7e7;
+    position: fixed;
+    z-index: 10;
+    background-color: #ffffff;
+    width: 100%;
+    top: 0;
+}
+.tab-item {
+    -webkit-box-flex: 1;
+    width: 0;
+    text-align: center;
+}
+
+.tab-item > text {
+    font-size: 28rpx;
+    color: #666;
+    margin: 0;
+    display: -webkit-inline-box;
+    line-height: 86rpx;
+}
+
+.tab-item > .active {
+    border-bottom: 4rpx solid #fd7f37;
+    color: #fd7f37;
+}
+.list{
+      margin-top: 110rpx;
+      margin-bottom: 20rpx;
+}
+navigator{
+  margin-top:20rpx;
+}
+.order-item-number{
+      width: 95%;
+    background-color: #ffffff;
+    padding: 16rpx;
+    font-size: 24rpx;
+    color: #333;
+    margin: 0px;
+}
+.order-item{
+  /* border-bottom:1px solid #e7e7e7; */
+  box-shadow: rgba(0,0,0,0.1) 0 0 10px;
+
+}
+.order-type{
+  float: right;
+  margin-right: 48rpx;
+  font-size: 28rpx;
+  margin-top: -2rpx;
+}
+/* .oreder-particulars{
+      width: 100%;
+    background-color: #EEEEEE;
+    /* position: absolute; */
+   /* height: 120px;
+}
+.oreder-particulars-img {
+    width: 100PX;
+    float: left;
+}
+.oreder-particulars-img > image {
+    width: 100%;
+    margin: 8px;
+    height: 100px;
+}
+.oreder-particulars-title {
+    width: 50%;
+    float: left;
+    margin: 8px;
+}
+.oreder-particulars-title > .oreder-particulars-name {
+    color: #333;
+    font-size: 14px;
+    margin: 0px;
+    margin-left: 12px;
+}
+.order-paric {*/
+    /* width: 20%; */
+   /* float: right;
+    margin: 8px;
+    margin-right: 10px;
+    text-align: right;
+    font-size: 14px;
+    color: #333;
+}
+.order-totoal {
+    margin-top: 110px;
+    background-color: #ffffff;
+}
+.order-totoal-p {
+    margin: 0px;
+    padding: 10px 0px;
+    text-align: right;
+    margin-right: 10px;
+    float: right;
+    font-size: 14px;
+    color: #B3B3B3;
+} */
+.order-button {
+    /* margin-top: 150px; */
+    background-color: #ffffff;
+    
+    height: 80rpx;
+}
+
+.order-button-type {
+  border:2rpx solid #F36066;
+border-radius:10rpx;
+padding:8rpx 32rpx;
+font-size:24rpx;
+margin:14rpx 20rpx 0 28rpx;
+white-space:nowrap;
+color:#F36066;
+float:right;
+
+
+}
+/*---------------*/
+.oreder-particulars{
+      width: 94%;
+    background-color: #f5f5f5;
+    /* position: absolute; */
+    padding: 16rpx  16rpx 16rpx 24rpx;
+    /* border-bottom: 1px solid #e7e7e7; */
+    height: 200rpx;
+}
+.oreder-particulars-img {
+    width: 200rpx;
+    height: 200rpx;
+    float: left;
+    border-radius:8rpx;
+overflow:hidden;
+
+}
+.oreder-particulars-img > image {
+    width: 100%;
+    /* margin: 8px; */
+    height: 200rpx;
+}
+.oreder-particulars-title {
+    width: 65%;
+    float: left;
+    /* margin: 8px; */
+    font-size: 28rpx;
+    margin-left: 16rpx;
+    height: 200rpx;
+}
+ .oreder-particulars-name {
+    color: #333;
+    font-size: 28rpx;
+    /* margin: 0px; */
+    /* margin-left: 12px; */
+    overflow: hidden;
+    
+}
+ .oreder-particulars-name1{
+    /* color: #333; */
+    font-size: 24rpx;
+    float: left;
+    margin-top: 16rpx;
+    color: #ACACAC;
+    
+}
+/*-------------------*/
+.image1{
+  width: 560rpx;
+   height: 560rpx; 
+   margin-bottom:30rpx;
+}
+.image2{
+  width: 100%;
+  height: 100%;
+  /* padding: 10px; */
+  text-align: center;
+  margin:40rpx auto;
+}
+page{
+  width: 100%;
+  height: 100%;
+}
+.jixu{
+  width: 20%;
+  height: 80rpx;
+  border: 2rpx solid #F36066;
+  color: #F36066;
+  text-align: center;
+  font-size: 28rpx;
+  padding: 8rpx 32rpx;
+  border-radius: 8rpx;
+}

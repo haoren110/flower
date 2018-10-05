@@ -1,0 +1,78 @@
+<image src='../../images/icon_29.png' class='header' wx:if="{{orderStatus=='UN_PAY'}}"></image>
+<!-- UN_PAY("待付款", "已下单,未支付"), -->
+<image src='../../images/icon_30.png' class='header' wx:if="{{orderStatus=='WAIT_DELIVER'}}"></image>
+<!--     WAIT_DELIVER("待发货", "已付款，等待发货"), -->
+<image src='../../images/icon_32.png' class='header' wx:if="{{orderStatus=='REVOKE'}}"></image>
+<!-- REVOKE("已取消", "取消订单"), -->
+<image src='../../images/icon_30.png' class='header' wx:if="{{orderStatus=='WAIT_RECEIPT'}}"></image>
+<!--     WAIT_RECEIPT("待收货", "已发货，等待收货"), -->
+<image src='../../images/icon_31.png' class='header' wx:if="{{orderStatus=='END_SERVE'}}"></image>
+<!--  END_SERVE("已完成", "已收货,交易成功"); -->
+<view style='margin-bottom:{{orderStatus=="UN_PAY"?"50px":""}}'>
+  <view class="confirm_address">
+    <image src='../../images/icon_27.png' class="confirm_address_img"></image>
+
+    <view class="confirm_address_information">
+      <view class="confirm_address_information1">
+      <!--{{orders.orderSendType=='MEMBER'?"花行电话：":"订购人电话："}}  -->
+        {{orders.orderSendType=='MEMBER'?"花行名字：":"收花人："}}   {{orders.name}}  {{orders.mobile}}
+      </view>
+      <view class="confirm_address_information2">
+        {{orders.orderSendType=='MEMBER'?"花行地址：":"收花地址："}}{{orders.addressDetail}}
+      </view>
+    </view>
+    <!-- <image src='../../images/icon-right.png' class='icon-right'></image> -->
+    <view style=' line-height:12px;margin-top:8rpx;'>
+      <image src='../../images/line02.png' class='line'></image>
+    </view>
+  </view>
+  <block wx:for='{{orderProducts}}' wx:for-item="itemPro">
+    <view class="oreder-particulars">
+      <!-- <navigator url="../action/action?shopid=1"> -->
+      <view class="oreder-particulars-img">
+        <image src="{{img}}{{itemPro.mainImg}}"></image>
+      </view>
+      <!-- </navigator> -->
+      <view class="oreder-particulars-title">
+        <view class="oreder-particulars-name">
+          {{itemPro.productName}}
+        </view>
+        <view style='margin-top:40px; float:left;'>￥{{itemPro.unitPrice}}</view>
+        <view style='margin-top:40px; float:right; margin-right:8px;'>×{{itemPro.num}}</view>
+      </view>
+    </view>
+  </block>
+  <view class='request'>
+    <view class='requestItem'>
+      <label>订单编号：{{orders.orderNumber}}</label>
+    </view>
+    <view class='requestItem'>
+      <label>订购人：{{orders.dgName}}</label>
+    </view>
+    <view class='requestItem'>
+      <label>订购人电话：{{orders.dgMobile}}</label>
+    </view>
+    <view class='requestItem'>
+      <label>{{orders.orderSendType=='MEMBER'?"取花时间：":"送花时间："}}{{sendTime}}</label>
+    </view>
+    <view class='requestItem'>
+      <label>卡片留言：{{orders.message}}</label>
+    </view>
+    <view class='requestItem'>
+      <label>特殊要求：{{orders.requirements}}</label>
+    </view>
+  </view>
+  
+</view>
+ <view class="foot" wx:if="{{orderStatus=='UN_PAY'}}">
+    <!-- <view class="foot-item collect">
+<image class='image1' src='../../images/fabu-bg.png'></image>
+<text class='text1'> 收藏</text>
+</view> -->
+    <view class="foot-item " style='background: #FFC7CB;' bindtap='cancelOrder'>
+      <text class="color">取消</text>
+    </view>
+    <view class="foot-item" style='background: #F36066;' bindtap='gotopay'>
+      <text class="color">立即支付</text>
+    </view>
+  </view>

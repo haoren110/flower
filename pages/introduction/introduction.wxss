@@ -1,0 +1,69 @@
+.header{
+  width: 100%;
+  height: 120rpx;
+}
+.content{
+  text-align: center;
+  padding: 32rpx;
+}
+.introduction{
+  text-align: center;
+  font-size: 24rpx;
+  padding: 20rpx;
+  line-height: 60rpx;
+  text-indent: 2em;
+  
+}
+.introduction1{
+  width: 50%;
+  height: 100rpx;
+}
+.introduction2{
+  text-align: center;
+  font-size: 24rpx;
+  background-color: #F36369;
+  line-height: 60rpx;
+  color: white;
+  padding: 16rpx;
+  margin-bottom: 40rpx;
+  margin-top: 40rpx;
+}
+.introduction2Text{
+  border: 2px solid white;
+}
+.message{
+  text-align: left;
+  font-size: 24rpx;
+  /* padding: 16px; */
+  line-height: 60rpx;
+  /* text-indent: 2em;  */
+}
+.introductionicon{
+width: 30rpx;
+  height: 32rpx;
+  margin-right:10rpx;
+  vertical-align:middle;
+
+}
+.contact_box{
+  width: 40%;
+  height: 50rpx;
+  line-height: 50rpx;
+  float: left;
+  /* margin-left: 40px; */
+}
+.contact_box1{
+  width: 35%;
+  height: 50rpx;
+  line-height: 50rpx;
+  float: left;
+   margin-left: 12%; 
+}
+.contact_box image{
+  /* margin-top:7px; */
+  vertical-align: middle;
+  margin-right:10rpx;
+}
+.contact_box text{
+  vertical-align: middle;
+}

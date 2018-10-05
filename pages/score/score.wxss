@@ -1,0 +1,101 @@
+.meHeader{
+ 
+   width: 100%;
+    background-size: 100% 100%;
+    text-align: center;
+    position: relative;
+}
+.available{
+  text-align: center;
+  color: #ffffff;
+  width: 30%;
+  position:absolute;
+  top:120rpx;
+  left:40%;
+
+}
+ .userInfoName{
+ 
+  font-size: 36rpx;
+  display: block;
+}
+/* .userInfoName1{
+  text-align: center;
+  font-size: 18px;
+      color: white;
+     line-height: 30px; 
+    position: absolute;
+    top: 120px;
+  left: 55%;
+}  */
+.userInfo-avatar{
+  position: absolute;
+  top: 120rpx;
+  left: 30%;
+  width: 100%;
+  background-size: 100% 100%;
+  text-align: center;
+  /* border-radius: 50%; */
+}
+.backImg{
+  width: 100%;
+
+}
+/*---------------------*/
+.choose{
+  font-size: 32rpx;
+  line-height: 40rpx;
+  margin: 20rpx;
+   border-bottom: 1px solid #e7e7e7; 
+   height: 100rpx;
+}
+.chooseImg{
+  width: 40rpx;
+  height: 40rpx;
+  float: right;
+  margin-top: 16rpx;
+}
+.addressText{
+  margin-left: 40rpx;
+  color: #f36066;
+   font-size: 24rpx;
+  
+  float: right;
+  
+}
+.addressImg{
+   width: 40rpx;
+  height: 50rpx;
+  float: left;
+  margin-top: 16rpx;
+}
+.chooseText{
+  font-size: 24rpx;
+  color: #b1b1b1;
+  float: right;
+}
+.scoreType{
+   /* position: absolute;  */
+  font-size: 24rpx;
+  color: #f36066;
+}
+.scoreType1{
+   /* position: absolute;  */
+  font-size: 24rpx;
+  color: #7d9d5d;
+}
+.prompt{
+  /* width: 90%; */
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  background-color: #f36066;
+  font-size: 24rpx;
+  /* height: 32px; */
+  /* text-align: center; */
+  vertical-align: middle;
+  padding: 10rpx;
+  text-align: center;
+}
+.promptext{
+  color: white;
+}

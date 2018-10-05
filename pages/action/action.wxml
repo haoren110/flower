@@ -1,0 +1,81 @@
+<import src="../wxParse/wxParse.wxml" />
+<!-- <view class='content' wx:if="{{list.price}}"> -->
+<view class='content'>
+  <!-- <view class="mui-content-div" wx:if="{{list.flagReturnGoods}}">此商品不支持退换货</view> -->
+  <view class='header'>
+    <!-- <image class='headerImage' src='{{list.productImage}}'></image> -->
+    <swiper class='headerImage' indicator-dots="true" autoplay="true" interval="5000" duration="1000">
+       <block wx:for="{{imgList}}" wx:for-index="index"> 
+        <swiper-item bindtap="toubu" data-hi="{{item.productId}}">
+          <image style="height:100%; width:100%" src="{{imageURL}}{{item.imageUrl}}" class="slide-image" mode="aspectFill" />
+        </swiper-item>
+       </block> 
+    </swiper>
+    <!-- <text class='shop-title'>{{list.productName}}{{list.standText}}{{list.standRemark}}</text> -->
+    <view style='margin-top:4px'><text class='shop-title'>{{list.productName}}</text></view>
+    
+  </view>
+  <view class="shop-text">
+    <text class="shop-text-price">{{price}}</text>
+    <text class="shop-text-cose">邮费：{{list.postage}}</text>
+    <!-- <text class="shop-text-rigth">共{{list.salesVolume}}笔</text> -->
+  </view>
+   <view class='choose'>
+   <view style='display: inline-block;margin-left:8px;'> <image src='../../images/xiaoduihao.png' class='chooseImg' ></image>
+    <text>店铺认证</text></view>
+   <view style='display: inline-block;margin-left:8px;'> <image src='../../images/xiaoduihao.png' class='chooseImg' ></image>
+    <text>担保交易</text></view>
+   <view style='display: inline-block;margin-left:8px;'><image src='../../images/xiaoduihao.png' class='chooseImg' ></image>
+    <text>线下门店</text></view>
+   
+   
+    
+  </view> 
+  <!-- 这一块是富文本 显示的内容区 -->
+  <view style='width:100%;padding:0;margin-bottom:50px;'>
+  <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+  </view>
+  <!-- <template is="wxParse" data="{{wxParseData:list.description.nodes}}"/> -->
+
+  <view class="foot">
+    <!-- <view class="foot-item collect">
+<image class='image1' src='../../images/fabu-bg.png'></image>
+<text class='text1'> 收藏</text>
+</view> -->
+    <view class="foot-item " style='background: #FFC7CB;' bindtap='addToShopCar'>
+      <text class="color">加入购物车</text>
+    </view>
+    <view class="foot-item" style='background: #F36066;' bindtap='choose'>
+      <text class="color">立即购买</text>
+    </view>
+  </view>
+  <view class='simpleShopCar'  hidden='{{choose}}'>
+    <view class='specificationsImg'>
+      <image src='{{imageURL}}{{list.images}}' class='specificationsImg1'></image>
+    </view>
+    <view class='specifications'>
+    <text class='specificationsPic1'>{{list.productName}}</text>
+      <text class='specificationsPic'>￥{{price}}</text>
+      <text class='specificationsClose' catchtap='cancelChoose'>×</text>
+      <view style='padding:0 20rpx 0 20rpx;margin-top:160rpx;'>
+      <text class='specificationsColor' wx:if='{{normsDetailsList}}'>规格</text>
+      <view class='specificationsText'>
+      <!-- <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}"> -->
+      <block wx:for="{{normsDetailsList}}">
+        <text class='specificationsText1' catchtap='spanchoose' data-id='{{index}}' style='{{select1==index?"background-color: #F36066;color: white;":"background-color: #eeeeee;color: #333333;"}}'>{{item.normsName}}</text>
+        </block>
+         <!-- </scroll-view> -->
+      </view>
+      </view>
+      <view style='margin-top:28rpx; padding:8rpx 20rpx 8rpx 20rpx'>
+        <text class='specificationsColor2'>数量</text>
+      <view class="mine-numBox">
+        <text class="mine-numBox-jian" catchtap='jian'>-</text>
+        <text class="mine-numBox-input">{{quantity}}</text>
+        <text class="mine-numBox-jia" catchtap='jia'>+</text>
+      </view>
+      </view>
+       
+    </view>
+  </view>
+</view>

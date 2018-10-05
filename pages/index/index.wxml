@@ -1,0 +1,141 @@
+<!--index.wxml-->
+<!--轮播图-->
+
+<swiper class='swiper' indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgList}}" wx:key="*this">
+    <swiper-item bindtap="toubu" data-hi="{{item.productId}}">
+      <image style="height:100%; width:100%" mode='aspecFill'  src="{{imageURL}}{{item.imageUrl}}" class="slide-image" />
+    </swiper-item>
+  </block>
+</swiper>
+<!-- <view class="section">
+<icon type="search" size="26.5" color='blue' />
+  <input placeholder="search" auto-focus/>
+</view> -->
+<!--按钮二级页-->
+<view class="box">
+  <view class="column">
+
+    <view class="item">
+      <navigator url='../detailProductList/detailProductList?currentClassification=0'>
+        <view class="itemImg">
+          <image src='../../images/icon_09.png' />
+        </view>
+
+        <view class="itemName">鲜花礼盒</view>
+      </navigator>
+    </view>
+    <view class="item">
+      <navigator url='../detailProductList/detailProductList?currentClassification=1'>
+        <view class="itemImg">
+          <image src='../../images/icon_10.png' />
+        </view>
+
+        <view class="itemName">生日花束</view>
+      </navigator>
+    </view>
+
+    <view class="item">
+      <navigator url='../detailProductList/detailProductList?currentClassification=2'>
+        <view class="itemImg">
+          <image src='../../images/icon_11.png' />
+        </view>
+
+        <view class="itemName">开业花篮</view>
+      </navigator>
+    </view>
+  </view>
+  <view class="column">
+    <view class="item">
+      <navigator url='../detailProductList/detailProductList?currentClassification=3'>
+        <view class="itemImg">
+          <image src='../../images/icon_12.png' />
+        </view>
+
+        <view class="itemName">会议桌花</view>
+      </navigator>
+    </view>
+
+    <view class="item">
+      <navigator url='../detailProductList/detailProductList?currentClassification=4'>
+        <view class="itemImg">
+          <image src='../../images/icon_13.png' />
+        </view>
+
+        <view class="itemName">婚礼用花</view>
+      </navigator>
+    </view>
+
+    <view class="item">
+      <navigator url='../detailProductList/detailProductList?currentClassification=5'>
+        <view class="itemImg">
+          <image src='../../images/icon_14.png' />
+        </view>
+
+        <view class="itemName">祭奠用花</view>
+      </navigator>
+    </view>
+
+  </view>
+</view>
+<view class='recommended'>
+  <text>每日推荐 / <text class='title_small'>RECOMMENDED DAILY</text></text>
+  <image src='../../images/Home_02.png' class='recommendedImage'></image>
+  <view class='recommendedView'>
+    <navigator url='../action/action?productId={{recommendProducts[0].id}}'>
+      <view class='recommendedProduct' style='width:{{WIDTH*0.46}}px;height:{{WIDTH*0.46}}px;'>
+        <image src='{{imageURL}}{{recommendProducts[0].images}}'></image>
+        <view class='text_box'>
+        <view class='text_box_01'>
+         <text >{{recommendProducts[0].productName}}</text>
+        </view>
+         <view class='text_box_02'>
+         <text >RMB {{recommendProducts[0].price}}</text> 
+         </view>
+           
+        </view>
+      </view>
+    </navigator>
+    <navigator url='../action/action?productId={{recommendProducts[1].id}}'>
+      <view class='recommendedProduct' style='width:{{WIDTH*0.46}}px;height:{{WIDTH*0.46}}px;'>
+        <image src='{{imageURL}}{{recommendProducts[1].images}}'></image>
+        <view class='text_box'>
+          <view class='text_box_01'>
+         <text >{{recommendProducts[1].productName}}</text>
+        </view>
+         <view class='text_box_02'>
+         <text >RMB {{recommendProducts[1].price}}</text> 
+         </view>
+        </view>
+      </view>
+    </navigator>
+  </view>
+</view>
+<view class='recommended'>
+  <text>全部商品 / <text class='title_small'>ALL THE GOODS</text></text>
+  <image src='../../images/Home_03.png' class='recommendedImage'></image>
+</view>
+<block wx:for="{{list}}" wx:key="key1">
+  <view class='product_list_item' style='width:{{WIDTH*0.44}}px;'>
+    <navigator url='../action/action?productId={{item.product.id}}'>
+      <view class='prouduct_list_img' style='height:{{WIDTH*0.44}}px;'>
+        <image src='{{imageURL}}{{item.product.images}}'></image>
+      </view>
+    </navigator>
+    <!-- <text class='prouduct_list_name'>{{item.product.productName}}</text> -->
+    <text class='prouduct_list_name'>{{item.product.productName}}</text>
+    <view class='item_price'>
+      <text class='prouduct_list_price'>￥{{item.product.price}}</text>
+      <view class='shopCar'>
+
+        <image class='shopCarImage' src="../../images/icon_05.png"></image>
+        <text class='shopCarText' catchtap='addToCar' data-index='{{index}}'>加入购物车</text>
+      </view>
+    </view>
+  </view>
+</block>
+<!-- <view style='font-size:12px; text-align: center;width:95%;line-height:25px; height:25px;padding:4px;' bindtap='loadMore' hidden='{{hidden}}'>
+  <text>点击加载更多</text>
+</view> -->
+<!-- <button bindtap='gotoDraw'>画图</button>  -->
+<!-- <button bindtap='gotoProductList'>订单列表</button> -->
